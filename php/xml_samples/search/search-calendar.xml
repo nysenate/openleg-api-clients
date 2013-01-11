@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<results total="147">
+
+		<result type="calendar" id="cal-active-00004-2009" score="8.012557" title="4 - active - Jan 25, 2010" 
+		 summary="4  bill(s)" when="1264377600000"
+		 />
+		
+		<result type="calendar" id="cal-active-00005-2009" score="8.012557" title="5 - active - Jan 26, 2010" 
+		 summary="1  bill(s)" when="1264464000000"
+		 />
+		
+		<result type="calendar" id="cal-active-00006-2009" score="8.012557" title="6 - active - Feb 1, 2010" 
+		 summary="13  bill(s)" when="1264982400000"
+		 />
+		
+		<result type="calendar" id="cal-active-00007-2009" score="8.012557" title="7 - active - Feb 2, 2010" 
+		 summary="8  bill(s)" when="1265068800000"
+		 />
+		
+		<result type="calendar" id="cal-active-00008-2009" score="8.012557" title="8 - active - Feb 8, 2010" 
+		 summary="11  bill(s)" when="1265587200000"
+		 />
+		
+		<result type="calendar" id="cal-active-00009-2009" score="8.012557" title="9 - active - Feb 9, 2010" 
+		 summary="2  bill(s)" when="1265673600000"
+		 />
+		
+		<result type="calendar" id="cal-active-00010-2009" score="8.012557" title="10 - active - Feb 22, 2010" 
+		 summary="16  bill(s)" when="1266796800000"
+		 />
+		
+		<result type="calendar" id="cal-active-00012-2009" score="8.012557" title="12 - active - Feb 24, 2010" 
+		 summary="8  bill(s)" when="1266969600000"
+		 />
+		
+		<result type="calendar" id="cal-active-00013-2009" score="8.012557" title="13 - active - Mar 1, 2010" 
+		 summary="5  bill(s)" when="1267401600000"
+		 />
+		
+		<result type="calendar" id="cal-active-00015-2009" score="8.012557" title="15 - active - Mar 3, 2010" 
+		 summary="17  bill(s)" when="1267574400000"
+		 />
+		
+		<result type="calendar" id="cal-active-00016-2009" score="8.012557" title="16 - active - Mar 4, 2010" 
+		 summary="18  bill(s)" when="1267660800000"
+		 />
+		
+		<result type="calendar" id="cal-active-00018-2009" score="8.012557" title="18 - active - Mar 10, 2010" 
+		 summary="8  bill(s)" when="1268179200000"
+		 />
+		
+		<result type="calendar" id="cal-active-00019-2009" score="8.012557" title="19 - active - Mar 10, 2010" 
+		 summary="8  bill(s)" when="1268179200000"
+		 />
+		
+		<result type="calendar" id="cal-active-00020-2009" score="8.012557" title="20 - active - Mar 11, 2010" 
+		 summary="6  bill(s)" when="1268265600000"
+		 />
+		
+		<result type="calendar" id="cal-active-00021-2009" score="8.012557" title="21 - active - Mar 15, 2010" 
+		 summary="13  bill(s)" when="1268611200000"
+		 />
+		
+		<result type="calendar" id="cal-active-00023-2009" score="8.012557" title="23 - active - Mar 17, 2010" 
+		 summary="11  bill(s)" when="1268784000000"
+		 />
+		
+		<result type="calendar" id="cal-active-00024-2009" score="8.012557" title="24 - active - Mar 18, 2010" 
+		 summary="15  bill(s)" when="1268870400000"
+		 />
+		
+		<result type="calendar" id="cal-active-00025-2009" score="8.012557" title="25 - active - Mar 22, 2010" 
+		 summary="7  bill(s)" when="1269216000000"
+		 />
+		
+		<result type="calendar" id="cal-active-00027-2009" score="8.012557" title="27 - active - Mar 24, 2010" 
+		 summary="3  bill(s)" when="1269388800000"
+		 />
+		
+		<result type="calendar" id="cal-active-00028-2009" score="8.012557" title="28 - active - Mar 25, 2010" 
+		 summary="2  bill(s)" when="1269475200000"
+		 />
+		
+</results>

@@ -1,0 +1,416 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>OpenLeg - /xml/schemas/output/Bill.xsd - SenateDev</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<link href="/themes/basecamp/stylesheets/application.css?1258406335" media="all" rel="stylesheet" type="text/css" />
+<script src="/javascripts/prototype.js?1241539130" type="text/javascript"></script>
+<script src="/javascripts/effects.js?1241539130" type="text/javascript"></script>
+<script src="/javascripts/dragdrop.js?1241539130" type="text/javascript"></script>
+<script src="/javascripts/controls.js?1241539130" type="text/javascript"></script>
+<script src="/javascripts/application.js?1241539130" type="text/javascript"></script>
+<link href="/stylesheets/jstoolbar.css?1241539130" media="screen" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+    <style type="text/css">
+      * html body{ width: expression( document.documentElement.clientWidth < 900 ? '900px' : '100%' ); }
+      body {behavior: url(/stylesheets/csshover.htc?1241539130);}
+    </style>
+<![endif]-->
+
+<!-- page specific tags -->
+
+<link href="/stylesheets/scm.css?1241539130" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="wrapper">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a href="/my/account" class="my-account">My account</a></li>
+<li><a href="/logout" class="logout">Sign out</a></li></ul>    </div>
+    <div id="loggedas">Logged in as <a href="/account/show/34">sheldon.rampton</a></div>
+    <ul><li><a href="/" class="home">Home</a></li>
+<li><a href="/my/page" class="my-page">My page</a></li>
+<li><a href="/projects" class="projects">Projects</a></li>
+<li><a href="/admin" class="administration">Administration</a></li>
+<li><a href="http://www.redmine.org/guide" class="help">Help</a></li></ul></div>
+      
+<div id="header">
+    <div id="quick-search">
+        <form action="/search/index/legxml" method="get">
+        <a href="/search/index/legxml" accesskey="4">Search</a>:
+        <input accesskey="f" class="small" id="q" name="q" size="20" type="text" />
+        </form>
+        
+<select onchange="if (this.value != '') { window.location = this.value; }">
+<option selected="selected">Jump to a project...</option>
+<option disabled="disabled">---</option>
+
+    <option value="/projects/show/auth?jump=repository">Authentication</option>
+    
+        
+
+    <option value="/projects/show/bronto?jump=repository">Bronto Blast E-mail</option>
+    
+        
+        <option value="/projects/show/treqs?jump=repository">&#187; Bronto T-Reqs</option>
+    
+
+    <option value="/projects/show/cio-team?jump=repository">CIO Team</option>
+    
+        
+        <option value="/projects/show/capitolcampii?jump=repository">&#187; Capitol Camp II</option>
+    
+        
+        <option value="/projects/show/internships?jump=repository">&#187; CIO Intern Program</option>
+    
+        
+        
+        <option value="/projects/show/staffing?jump=repository">&#187; Staffing</option>
+    
+
+    <option value="/projects/show/crm?jump=repository">Constituent Relationship Mgmt</option>
+    
+        
+        <option value="/projects/show/bluebird?jump=repository">&#187; Bluebird CRM</option>
+    
+        
+
+    <option value="/projects/show/infrastructure?jump=repository">Infrastructure</option>
+    
+        
+        <option value="/projects/show/future-video?jump=repository">&#187; Future Video</option>
+    
+        
+
+    <option value="/projects/show/intranet?jump=repository">Intranet</option>
+    
+        
+        
+        <option value="/projects/show/openatrium?jump=repository">&#187; OpenAtrium</option>
+    
+
+    <option value="/projects/show/senatetech?jump=repository">NYSSTech / SenateTech</option>
+    
+        
+
+    <option value="/projects/show/legxml?jump=repository">OpenLeg</option>
+    
+        
+        
+        <option value="/projects/show/phpopenleg?jump=repository">&#187; OpenLeg PHP Library</option>
+    
+
+    <option value="/projects/show/publicwebsite?jump=repository">Public Website</option>
+    
+        
+        <option value="/projects/show/mobile?jump=repository">&#187; Mobile Apps</option>
+    
+        
+        <option value="/projects/show/opendata?jump=repository">&#187; OpenData</option>
+    
+        
+        
+        <option value="/projects/show/website-eventsvideos?jump=repository">&#187; Website - Content &amp; Events</option>
+    
+
+    <option value="/projects/show/senatedev?jump=repository">SenateDev Planning</option>
+    
+        
+
+</select>
+
+    </div>
+    
+    <h1>OpenLeg</h1>
+    
+    <div id="main-menu">
+        <ul><li><a href="/projects/show/legxml" class="overview">Overview</a></li>
+<li><a href="/projects/activity/legxml" class="activity">Activity</a></li>
+<li><a href="/projects/roadmap/legxml" class="roadmap">Roadmap</a></li>
+<li><a href="/projects/legxml/issues" class="issues">Issues</a></li>
+<li><a href="/projects/legxml/issues/new" accesskey="7" class="new-issue">New issue</a></li>
+<li><a href="/projects/legxml/news" class="news">News</a></li>
+<li><a href="/projects/legxml/documents" class="documents">Documents</a></li>
+<li><a href="/wiki/legxml" class="wiki">Wiki</a></li>
+<li><a href="/projects/legxml/boards" class="boards">Forums</a></li>
+<li><a href="/projects/list_files/legxml" class="files">Files</a></li>
+<li><a href="/repositories/show/legxml" class="repository selected">Repository</a></li>
+<li><a href="/projects/settings/legxml" class="settings">Settings</a></li></ul>
+    </div>
+</div>
+
+<div class="nosidebar" id="main">
+    <div id="sidebar">        
+        
+        
+    </div>
+    
+    <div id="content">
+				
+        <h2><a href="/repositories/browse/legxml">root</a>
+
+    / <a href="/repositories/browse/legxml/xml">xml</a>
+
+    / <a href="/repositories/browse/legxml/xml/schemas">schemas</a>
+
+    / <a href="/repositories/browse/legxml/xml/schemas/output">output</a>
+
+
+    / <a href="/repositories/changes/legxml/xml/schemas/output/Bill.xsd">Bill.xsd</a>
+
+
+
+
+</h2>
+
+<p><p>
+
+    View |
+
+
+    <a href="/repositories/annotate/legxml/xml/schemas/output/Bill.xsd">Annotate</a> |
+
+<a href="/repositories/entry/legxml/xml/schemas/output/Bill.xsd?format=raw">Download</a>
+(1.9 KB)
+</p>
+</p>
+
+<div class="autoscroll">
+<table class="filecontent CodeRay">
+<tbody>
+
+
+<tr><th class="line-num" id="L1"><a href="#L1">1</a></th><td class="line-code"><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+</pre></td></tr>
+
+
+<tr><th class="line-num" id="L2"><a href="#L2">2</a></th><td class="line-code"><pre>&lt;xs:schema xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; elementFormDefault=&quot;qualified&quot;&gt;
+</pre></td></tr>
+
+
+<tr><th class="line-num" id="L3"><a href="#L3">3</a></th><td class="line-code"><pre>  &lt;xs:element name=&quot;docket&quot;&gt;
+</pre></td></tr>
+
+
+<tr><th class="line-num" id="L4"><a href="#L4">4</a></th><td class="line-code"><pre>    &lt;xs:complexType&gt;
+</pre></td></tr>
+
+
+<tr><th class="line-num" id="L5"><a href="#L5">5</a></th><td class="line-code"><pre>      &lt;xs:sequence&gt;
+</pre></td></tr>
+
+
+<tr><th class="line-num" id="L6"><a href="#L6">6</a></th><td class="line-code"><pre>        &lt;xs:element ref=&quot;bill&quot;/&gt;
+</pre></td></tr>
+
+
+<tr><th class="line-num" id="L7"><a href="#L7">7</a></th><td class="line-code"><pre>      &lt;/xs:sequence&gt;
+</pre></td></tr>
+
+
+<tr><th class="line-num" id="L8"><a href="#L8">8</a></th><td class="line-code"><pre>    &lt;/xs:complexType&gt;
+</pre></td></tr>
+
+
+<tr><th class="line-num" id="L9"><a href="#L9">9</a></th><td class="line-code"><pre>  &lt;/xs:element&gt;
+</pre></td></tr>
+
+
+<tr><th class="line-num" id="L10"><a href="#L10">10</a></th><td class="line-code"><pre>  &lt;xs:element name=&quot;bill&quot;&gt;
+</pre></td></tr>
+
+
+<tr><th class="line-num" id="L11"><a href="#L11">11</a></th><td class="line-code"><pre>    &lt;xs:complexType&gt;
+</pre></td></tr>
+
+
+<tr><th class="line-num" id="L12"><a href="#L12">12</a></th><td class="line-code"><pre>      &lt;xs:sequence&gt;
+</pre></td></tr>
+
+
+<tr><th class="line-num" id="L13"><a href="#L13">13</a></th><td class="line-code"><pre>        &lt;xs:element ref=&quot;cosponsors&quot;/&gt;
+</pre></td></tr>
+
+
+<tr><th class="line-num" id="L14"><a href="#L14">14</a></th><td class="line-code"><pre>        &lt;xs:element ref=&quot;amendments&quot;/&gt;
+</pre></td></tr>
+
+
+<tr><th class="line-num" id="L15"><a href="#L15">15</a></th><td class="line-code"><pre>        &lt;xs:element ref=&quot;summary&quot;/&gt;
+</pre></td></tr>
+
+
+<tr><th class="line-num" id="L16"><a href="#L16">16</a></th><td class="line-code"><pre>        &lt;xs:element ref=&quot;committee&quot;/&gt;
+</pre></td></tr>
+
+
+<tr><th class="line-num" id="L17"><a href="#L17">17</a></th><td class="line-code"><pre>        &lt;xs:element ref=&quot;actions&quot;/&gt;
+</pre></td></tr>
+
+
+<tr><th class="line-num" id="L18"><a href="#L18">18</a></th><td class="line-code"><pre>        &lt;xs:element ref=&quot;text&quot;/&gt;
+</pre></td></tr>
+
+
+<tr><th class="line-num" id="L19"><a href="#L19">19</a></th><td class="line-code"><pre>        &lt;xs:element ref=&quot;memo&quot;/&gt;
+</pre></td></tr>
+
+
+<tr><th class="line-num" id="L20"><a href="#L20">20</a></th><td class="line-code"><pre>      &lt;/xs:sequence&gt;
+</pre></td></tr>
+
+
+<tr><th class="line-num" id="L21"><a href="#L21">21</a></th><td class="line-code"><pre>      &lt;xs:attribute name=&quot;assemblySameAs&quot; use=&quot;required&quot; type=&quot;xs:NCName&quot;/&gt;
+</pre></td></tr>
+
+
+<tr><th class="line-num" id="L22"><a href="#L22">22</a></th><td class="line-code"><pre>      &lt;xs:attribute name=&quot;billId&quot; use=&quot;required&quot; type=&quot;xs:NCName&quot;/&gt;
+</pre></td></tr>
+
+
+<tr><th class="line-num" id="L23"><a href="#L23">23</a></th><td class="line-code"><pre>      &lt;xs:attribute name=&quot;lawSection&quot; use=&quot;required&quot;/&gt;
+</pre></td></tr>
+
+
+<tr><th class="line-num" id="L24"><a href="#L24">24</a></th><td class="line-code"><pre>      &lt;xs:attribute name=&quot;sameAs&quot; use=&quot;required&quot; type=&quot;xs:NCName&quot;/&gt;
+</pre></td></tr>
+
+
+<tr><th class="line-num" id="L25"><a href="#L25">25</a></th><td class="line-code"><pre>      &lt;xs:attribute name=&quot;senateId&quot; use=&quot;required&quot; type=&quot;xs:NCName&quot;/&gt;
+</pre></td></tr>
+
+
+<tr><th class="line-num" id="L26"><a href="#L26">26</a></th><td class="line-code"><pre>      &lt;xs:attribute name=&quot;sponsor&quot; use=&quot;required&quot; type=&quot;xs:NCName&quot;/&gt;
+</pre></td></tr>
+
+
+<tr><th class="line-num" id="L27"><a href="#L27">27</a></th><td class="line-code"><pre>      &lt;xs:attribute name=&quot;title&quot; use=&quot;required&quot;/&gt;
+</pre></td></tr>
+
+
+<tr><th class="line-num" id="L28"><a href="#L28">28</a></th><td class="line-code"><pre>      &lt;xs:attribute name=&quot;year&quot; use=&quot;required&quot; type=&quot;xs:integer&quot;/&gt;
+</pre></td></tr>
+
+
+<tr><th class="line-num" id="L29"><a href="#L29">29</a></th><td class="line-code"><pre>    &lt;/xs:complexType&gt;
+</pre></td></tr>
+
+
+<tr><th class="line-num" id="L30"><a href="#L30">30</a></th><td class="line-code"><pre>  &lt;/xs:element&gt;
+</pre></td></tr>
+
+
+<tr><th class="line-num" id="L31"><a href="#L31">31</a></th><td class="line-code"><pre>  &lt;xs:element name=&quot;cosponsors&quot;&gt;
+</pre></td></tr>
+
+
+<tr><th class="line-num" id="L32"><a href="#L32">32</a></th><td class="line-code"><pre>    &lt;xs:complexType/&gt;
+</pre></td></tr>
+
+
+<tr><th class="line-num" id="L33"><a href="#L33">33</a></th><td class="line-code"><pre>  &lt;/xs:element&gt;
+</pre></td></tr>
+
+
+<tr><th class="line-num" id="L34"><a href="#L34">34</a></th><td class="line-code"><pre>  &lt;xs:element name=&quot;amendments&quot;&gt;
+</pre></td></tr>
+
+
+<tr><th class="line-num" id="L35"><a href="#L35">35</a></th><td class="line-code"><pre>    &lt;xs:complexType/&gt;
+</pre></td></tr>
+
+
+<tr><th class="line-num" id="L36"><a href="#L36">36</a></th><td class="line-code"><pre>  &lt;/xs:element&gt;
+</pre></td></tr>
+
+
+<tr><th class="line-num" id="L37"><a href="#L37">37</a></th><td class="line-code"><pre>  &lt;xs:element name=&quot;summary&quot; type=&quot;xs:string&quot;/&gt;
+</pre></td></tr>
+
+
+<tr><th class="line-num" id="L38"><a href="#L38">38</a></th><td class="line-code"><pre>  &lt;xs:element name=&quot;committee&quot; type=&quot;xs:NCName&quot;/&gt;
+</pre></td></tr>
+
+
+<tr><th class="line-num" id="L39"><a href="#L39">39</a></th><td class="line-code"><pre>  &lt;xs:element name=&quot;actions&quot;&gt;
+</pre></td></tr>
+
+
+<tr><th class="line-num" id="L40"><a href="#L40">40</a></th><td class="line-code"><pre>    &lt;xs:complexType&gt;
+</pre></td></tr>
+
+
+<tr><th class="line-num" id="L41"><a href="#L41">41</a></th><td class="line-code"><pre>      &lt;xs:sequence&gt;
+</pre></td></tr>
+
+
+<tr><th class="line-num" id="L42"><a href="#L42">42</a></th><td class="line-code"><pre>        &lt;xs:element maxOccurs=&quot;unbounded&quot; ref=&quot;action&quot;/&gt;
+</pre></td></tr>
+
+
+<tr><th class="line-num" id="L43"><a href="#L43">43</a></th><td class="line-code"><pre>      &lt;/xs:sequence&gt;
+</pre></td></tr>
+
+
+<tr><th class="line-num" id="L44"><a href="#L44">44</a></th><td class="line-code"><pre>    &lt;/xs:complexType&gt;
+</pre></td></tr>
+
+
+<tr><th class="line-num" id="L45"><a href="#L45">45</a></th><td class="line-code"><pre>  &lt;/xs:element&gt;
+</pre></td></tr>
+
+
+<tr><th class="line-num" id="L46"><a href="#L46">46</a></th><td class="line-code"><pre>  &lt;xs:element name=&quot;action&quot;&gt;
+</pre></td></tr>
+
+
+<tr><th class="line-num" id="L47"><a href="#L47">47</a></th><td class="line-code"><pre>    &lt;xs:complexType mixed=&quot;true&quot;&gt;
+</pre></td></tr>
+
+
+<tr><th class="line-num" id="L48"><a href="#L48">48</a></th><td class="line-code"><pre>      &lt;xs:attribute name=&quot;timestamp&quot; use=&quot;required&quot; type=&quot;xs:integer&quot;/&gt;
+</pre></td></tr>
+
+
+<tr><th class="line-num" id="L49"><a href="#L49">49</a></th><td class="line-code"><pre>    &lt;/xs:complexType&gt;
+</pre></td></tr>
+
+
+<tr><th class="line-num" id="L50"><a href="#L50">50</a></th><td class="line-code"><pre>  &lt;/xs:element&gt;
+</pre></td></tr>
+
+
+<tr><th class="line-num" id="L51"><a href="#L51">51</a></th><td class="line-code"><pre>  &lt;xs:element name=&quot;text&quot; type=&quot;xs:string&quot;/&gt;
+</pre></td></tr>
+
+
+<tr><th class="line-num" id="L52"><a href="#L52">52</a></th><td class="line-code"><pre>  &lt;xs:element name=&quot;memo&quot; type=&quot;xs:string&quot;/&gt;
+</pre></td></tr>
+
+
+<tr><th class="line-num" id="L53"><a href="#L53">53</a></th><td class="line-code"><pre>&lt;/xs:schema&gt;
+</pre></td></tr>
+
+
+</tbody>
+</table>
+</div>
+
+
+
+
+        
+    </div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+	
+<div id="footer">
+    Powered by <a href="http://www.redmine.org/">Redmine</a> &copy; 2006-2009 Jean-Philippe Lang
+</div>
+</div>
+
+</body>
+</html>

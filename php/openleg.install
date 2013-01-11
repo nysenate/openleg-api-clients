@@ -1,0 +1,24 @@
+<?php
+// $Id$
+
+/**
+ * @file
+ * Install/schema hooks for the OpenLeg module.
+ */
+
+function openleg_schema() {
+  $schema['cache_openleg'] = drupal_get_schema_unprocessed('system', 'cache');
+  return $schema;
+}
+
+function openleg_install() {
+  // Create my tables.
+  drupal_install_schema('openleg');
+  drupal_set_message(t('Database tables for the OpenLeg module have been installed.'));
+}
+
+function openleg_uninstall() {
+  // Drop my tables.
+  drupal_uninstall_schema('openleg');
+  drupal_set_message(t('The OpenLeg cache has been removed from the database.'));
+}

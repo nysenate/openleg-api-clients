@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<results total="498">
+
+		<result type="meeting" id="meeting-Aging-10-2009-2010" score="6.7973886" title="Aging - Mar 22, 2010 11:30 AM" 
+		 summary="Room 307 LOB" when="1269257400000" committee="Aging" location="Room 307 LOB" chair="Ruben Diaz, Sr."
+		 />
+		
+		<result type="meeting" id="meeting-Aging-11-2009" score="6.7973886" title="Aging - Apr 7, 2010 11:30 AM" 
+		 summary="Room 307 LOB" when="1270639800000" committee="Aging" location="Room 307 LOB" chair="Ruben Diaz, Sr."
+		 />
+		
+		<result type="meeting" id="meeting-Aging-11-2009-2010" score="6.7973886" title="Aging - Apr 7, 2010 11:30 AM" 
+		 summary="Room 307 LOB" when="1270639800000" committee="Aging" location="Room 307 LOB" chair="Ruben Diaz, Sr."
+		 />
+		
+		<result type="meeting" id="meeting-Aging-13-2009-2010" score="6.7973886" title="Aging - Apr 19, 2010 11:30 AM" 
+		 summary="Room 307 LOB" when="1271676600000" committee="Aging" location="Room 307 LOB" chair="Ruben Diaz, Sr."
+		 />
+		
+		<result type="meeting" id="meeting-Aging-16-2009-2010" score="6.7973886" title="Aging - May 10, 2010 11:30 AM" 
+		 summary="Room 307 LOB" when="1273491000000" committee="Aging" location="Room 307 LOB" chair="Ruben Diaz, Sr."
+		 />
+		
+		<result type="meeting" id="meeting-Aging-17-2009-2010" score="6.7973886" title="Aging - May 17, 2010 11:30 AM" 
+		 summary="Room 307 LOB" when="1274095800000" committee="Aging" location="Room 307 LOB" chair="Ruben Diaz, Sr."
+		 />
+		
+		<result type="meeting" id="meeting-Aging-19-2009-2009" score="6.7973886" title="Aging - Jun 1, 2010 11:30 AM" 
+		 summary="Room 307 LOB" when="1275391800000" committee="Aging" location="Room 307 LOB" chair="Ruben Diaz, Sr."
+		 />
+		
+		<result type="meeting" id="meeting-Aging-3-2009" score="6.7973886" title="Aging - Jan 25, 2010 11:30 AM" 
+		 summary="Room 307 LOB" when="1264419000000" committee="Aging" location="Room 307 LOB" chair="Ruben Diaz, Sr."
+		 />
+		
+		<result type="meeting" id="meeting-Aging-3-2009-2010" score="6.7973886" title="Aging - Jan 25, 2010 11:30 AM" 
+		 summary="Room 307 LOB" when="1264419000000" committee="Aging" location="Room 307 LOB" chair="Ruben Diaz, Sr."
+		 />
+		
+		<result type="meeting" id="meeting-Aging-4-2009" score="6.7973886" title="Aging - Feb 9, 2009 10:30 AM" 
+		 when="1234175400000" committee="Aging" chair="Ruben Diaz, Sr."
+		 />
+		
+		<result type="meeting" id="meeting-Aging-5-2009" score="6.7973886" title="Aging - Feb 8, 2010 11:30 AM" 
+		 summary="Room 307 LOB" when="1265628600000" committee="Aging" location="Room 307 LOB" chair="Ruben Diaz, Sr."
+		 />
+		
+		<result type="meeting" id="meeting-Aging-5-2009-2010" score="6.7973886" title="Aging - Feb 8, 2010 11:30 AM" 
+		 summary="Room 307 LOB" when="1265628600000" committee="Aging" location="Room 307 LOB" chair="Ruben Diaz, Sr."
+		 />
+		
+		<result type="meeting" id="meeting-Aging-6-2009" score="6.7973886" title="Aging - Feb 22, 2010 11:30 AM" 
+		 summary="Room 307 LOB" when="1266838200000" committee="Aging" location="Room 307 LOB" chair="Ruben Diaz, Sr."
+		 />
+		
+		<result type="meeting" id="meeting-Aging-6-2009-2009" score="6.7973886" title="Aging - Feb 22, 2010 11:30 AM" 
+		 summary="Room 307 LOB" when="1266838200000" committee="Aging" location="Room 307 LOB" chair="Ruben Diaz, Sr."
+		 />
+		
+		<result type="meeting" id="meeting-Aging-8-2009" score="6.7973886" title="Aging - Mar 8, 2010 11:30 AM" 
+		 summary="Room 307 LOB" when="1268047800000" committee="Aging" location="Room 307 LOB" chair="Ruben Diaz, Sr."
+		 />
+		
+		<result type="meeting" id="meeting-Aging-8-2009-2010" score="6.7973886" title="Aging - Mar 8, 2010 11:30 AM" 
+		 summary="Room 307 LOB" when="1268047800000" committee="Aging" location="Room 307 LOB" chair="Ruben Diaz, Sr."
+		 />
+		
+		<result type="meeting" id="meeting-Agriculture-13-2009-2010" score="6.7973886" title="Agriculture - Apr 20, 2010 9:30 AM" 
+		 summary="Hearing Room B" when="1271755800000" committee="Agriculture" location="Hearing Room B" chair="Darrel J. Aubertine"
+		 />
+		
+		<result type="meeting" id="meeting-Agriculture-16-2009-2010" score="6.7973886" title="Agriculture - May 11, 2010 9:30 AM" 
+		 summary="Room 904 LOB" when="1273570200000" committee="Agriculture" location="Room 904 LOB" chair="Darrel J. Aubertine"
+		 />
+		
+		<result type="meeting" id="meeting-Agriculture-18-2009-2009" score="6.7973886" title="Agriculture - May 25, 2010 9:30 AM" 
+		 summary="Room 904 LOB" when="1274779800000" committee="Agriculture" location="Room 904 LOB" chair="Darrel J. Aubertine"
+		 />
+		
+		<result type="meeting" id="meeting-Agriculture-20-2009-2010" score="6.7973886" title="Agriculture - Jun 8, 2010 9:30 AM" 
+		 summary="Room 904 LOB" when="1275989400000" committee="Agriculture" location="Room 904 LOB" chair="Darrel J. Aubertine"
+		 />
+		
+</results>

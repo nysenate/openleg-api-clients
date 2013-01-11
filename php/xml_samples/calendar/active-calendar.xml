@@ -1,0 +1,892 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<calendar year="2010" type="active" sessionYear="2009" no="6">
+    <supplementals>
+        <supplemental supplementalId="">
+            <sections/>
+            <sequence id="cal-active-00006-2009-supp--seq-">
+                <actCalDate>2010-02-01T00:00:00-05:00</actCalDate>
+                <calendarEntries no="7" id="cal-active-00006-2009-supp--seq--7">
+                    <bill year="2009" id="S4223A">
+                        <actClause>AN ACT to amend the executive law, in relation to designating August 20th as a day of commemoration to be known as &quot;Staten Island Day&quot; </actClause>
+                        <currentCommittee>FINANCE</currentCommittee>
+                        <lawSection>Executive Law</lawSection>
+                        <sameAs>A6095A</sameAs>
+                        <sponsor position="" fullname="SAVINO">
+                            <id>SAVINO-</id>
+                        </sponsor>
+                        <title>Designates August 20th as a day of commemoration to be known as &quot;Staten Island Day&quot;</title>
+                        <votes voteType="1" voteDate="2010-02-01T00:00:00-05:00" id="1264982400000S4223A-61-0">
+                            <abstains/>
+                            <ayes>
+<member>ADAMS</member>
+<member>ADDABBO</member>
+<member>ALESI</member>
+<member>AUBERTINE</member>
+<member>BONACIC</member>
+<member>BRESLIN</member>
+<member>DEFRANCISCO</member>
+<member>DIAZ</member>
+<member>DILAN</member>
+<member>DUANE</member>
+<member>ESPADA</member>
+<member>FARLEY</member>
+<member>FLANAGAN</member>
+<member>FOLEY</member>
+<member>FUSCHILLO</member>
+<member>GOLDEN</member>
+<member>GRIFFO</member>
+<member>HANNON</member>
+<member>HASSELL-THOMPSON</member>
+<member>HUNTLEY</member>
+<member>JOHNSON C</member>
+<member>JOHNSON O</member>
+<member>KLEIN</member>
+<member>KRUEGER</member>
+<member>KRUGER</member>
+<member>LANZA</member>
+<member>LARKIN</member>
+<member>LAVALLE</member>
+<member>LEIBELL</member>
+<member>LIBOUS</member>
+<member>LITTLE</member>
+<member>MARCELLINO</member>
+<member>MAZIARZ</member>
+<member>MCDONALD</member>
+<member>MONSERRATE</member>
+<member>MONTGOMERY</member>
+<member>NOZZOLIO</member>
+<member>ONORATO</member>
+<member>OPPENHEIMER</member>
+<member>PADAVAN</member>
+<member>PARKER</member>
+<member>PERKINS</member>
+<member>RANZENHOFER</member>
+<member>ROBACH</member>
+<member>SALAND</member>
+<member>SAMPSON</member>
+<member>SAVINO</member>
+<member>SCHNEIDERMAN</member>
+<member>SERRANO</member>
+<member>SEWARD</member>
+<member>SKELOS</member>
+<member>SMITH</member>
+<member>SQUADRON</member>
+<member>STACHOWSKI</member>
+<member>STAVISKY</member>
+<member>STEWART-COUSINS</member>
+<member>THOMPSON</member>
+<member>VALESKY</member>
+<member>VOLKER</member>
+<member>WINNER</member>
+<member>YOUNG</member>
+                            </ayes>
+                            <excuseds>
+<member>MORAHAN</member>
+                            </excuseds>
+                            <nays/>
+                        </votes>
+                    </bill>
+                </calendarEntries>
+                <calendarEntries no="13" id="cal-active-00006-2009-supp--seq--13">
+                    <bill year="2009" id="S4667">
+                        <currentCommittee>CODES</currentCommittee>
+                        <lawSection>Criminal Procedure Law</lawSection>
+                        <sameAs>A5170</sameAs>
+                        <sponsor position="" fullname="SCHNEIDERMAN">
+                            <id>SCHNEIDERMAN-</id>
+                        </sponsor>
+                        <summary>Permits the court to grant post-conviction motions to vacate a judgment when the issue raised upon such motion is ineffective assistance of counsel in certain cases in which the court would otherwise be required to deny the motion. </summary>
+                        <title>Permits the court to grant post-conviction motions to vacate a judgment when the issue raised upon such motion is ineffective assistance of counsel</title>
+                        <votes voteType="2" voteDate="2009-06-02T10:30:00-04:00" id="1243938600000S4667--1--1">
+                            <ayes>
+<member>SCHNEIDERMAN</member>
+<member>BRESLIN</member>
+<member>DUANE</member>
+<member>PARKER</member>
+<member>HUNTLEY</member>
+<member>SAMPSON</member>
+<member>KLEIN</member>
+<member>PERKINS</member>
+<member>SQUADRON</member>
+<member>VOLKER</member>
+<member>SALAND</member>
+<member>GOLDEN</member>
+<member>LANZA</member>
+<member>FLANAGAN</member>
+                            </ayes>
+                        </votes>
+                        <votes voteType="2" voteDate="2010-01-12T10:30:00-05:00" id="1263292200000S4667--1--1">
+                            <ayes>
+<member>SCHNEIDERMAN</member>
+<member>BRESLIN</member>
+<member>DUANE</member>
+<member>PARKER</member>
+<member>HUNTLEY</member>
+<member>SAMPSON</member>
+<member>KLEIN</member>
+<member>PERKINS</member>
+<member>SQUADRON</member>
+<member>VOLKER</member>
+<member>SALAND</member>
+<member>GOLDEN</member>
+                            </ayes>
+                            <nays>
+<member>DEFRANCISCO</member>
+<member>FLANAGAN</member>
+                            </nays>
+                        </votes>
+                    </bill>
+                </calendarEntries>
+                <calendarEntries no="15" id="cal-active-00006-2009-supp--seq--15">
+                    <bill year="2009" id="S4480C">
+                        <actClause>AN ACT to amend chapter 549 of the laws of 1994, amending the public authorities law relating to the membership composition of the metropolitan transportation authority board, in relation to extending the effectiveness of such provisions </actClause>
+                        <currentCommittee>TRANSPORTATION</currentCommittee>
+                        <lawSection>Public Authorities</lawSection>
+                        <sameAs>A7137B, </sameAs>
+                        <sponsor position="" fullname="DILAN">
+                            <id>DILAN-</id>
+                        </sponsor>
+                        <summary>
+An act to amend chapter 549 of the laws of 1994, amending the public authorities law relating to
+the membership composition of the metropolitan transportation authority board, in relation to extendi
+ng the effectiveness of such provisions
+</summary>
+                        <title>Relates to the membership composition of the metropolitan transportation authority board</title>
+                        <votes voteType="2" voteDate="2010-01-25T00:00:00-05:00" id="1264377600000S4480C--1--1">
+                            <ayes>
+<member>SMITH</member>
+<member>STACHOWSKI</member>
+<member>MONTGOMERY</member>
+<member>DUANE</member>
+<member>HASSELL-THOMPSON</member>
+<member>KRUEGER</member>
+<member>PARKER</member>
+<member>SERRANO</member>
+<member>STEWART-COUSINS</member>
+<member>DILAN</member>
+<member>KLEIN</member>
+<member>MONSERRATE</member>
+<member>JOHNSON O</member>
+<member>PADAVAN</member>
+<member>VOLKER</member>
+                            </ayes>
+                            <excuseds>
+<member>VALESKY</member>
+                            </excuseds>
+                            <nays>
+<member>ESPADA</member>
+<member>SKELOS</member>
+<member>FARLEY</member>
+<member>LAVALLE</member>
+<member>SEWARD</member>
+<member>HANNON</member>
+<member>LARKIN</member>
+<member>SALAND</member>
+                            </nays>
+                        </votes>
+                    </bill>
+                </calendarEntries>
+                <calendarEntries no="20" id="cal-active-00006-2009-supp--seq--20">
+                    <bill year="2009" id="S1941">
+                        <currentCommittee>FINANCE</currentCommittee>
+                        <lawSection>Executive Law</lawSection>
+                        <sameAs>A6026</sameAs>
+                        <sponsor position="" fullname="STACHOWSKI">
+                            <id>STACHOWSKI-</id>
+                        </sponsor>
+                        <summary>Requires licensed and certified residential real property appraisers to report mortgage underwriting appraisals of one to four family residential properties in the city of Buffalo to the office of real property services. </summary>
+                        <title>Requires licensed and certified residential real property appraisers to report appraisals in the city of Buffalo to the office of real property services</title>
+                        <votes voteType="1" voteDate="2010-02-01T00:00:00-05:00" id="1264982400000S1941-60-1">
+                            <abstains/>
+                            <ayes>
+<member>ADAMS</member>
+<member>ADDABBO</member>
+<member>ALESI</member>
+<member>AUBERTINE</member>
+<member>BONACIC</member>
+<member>BRESLIN</member>
+<member>DEFRANCISCO</member>
+<member>DIAZ</member>
+<member>DILAN</member>
+<member>DUANE</member>
+<member>ESPADA</member>
+<member>FARLEY</member>
+<member>FLANAGAN</member>
+<member>FOLEY</member>
+<member>FUSCHILLO</member>
+<member>GOLDEN</member>
+<member>GRIFFO</member>
+<member>HANNON</member>
+<member>HASSELL-THOMPSON</member>
+<member>HUNTLEY</member>
+<member>JOHNSON C</member>
+<member>JOHNSON O</member>
+<member>KLEIN</member>
+<member>KRUEGER</member>
+<member>KRUGER</member>
+<member>LANZA</member>
+<member>LARKIN</member>
+<member>LAVALLE</member>
+<member>LEIBELL</member>
+<member>LIBOUS</member>
+<member>LITTLE</member>
+<member>MARCELLINO</member>
+<member>MAZIARZ</member>
+<member>MCDONALD</member>
+<member>MONSERRATE</member>
+<member>MONTGOMERY</member>
+<member>NOZZOLIO</member>
+<member>ONORATO</member>
+<member>OPPENHEIMER</member>
+<member>PADAVAN</member>
+<member>PARKER</member>
+<member>PERKINS</member>
+<member>ROBACH</member>
+<member>SALAND</member>
+<member>SAMPSON</member>
+<member>SAVINO</member>
+<member>SCHNEIDERMAN</member>
+<member>SERRANO</member>
+<member>SEWARD</member>
+<member>SKELOS</member>
+<member>SMITH</member>
+<member>SQUADRON</member>
+<member>STACHOWSKI</member>
+<member>STAVISKY</member>
+<member>STEWART-COUSINS</member>
+<member>THOMPSON</member>
+<member>VALESKY</member>
+<member>VOLKER</member>
+<member>WINNER</member>
+<member>YOUNG</member>
+                            </ayes>
+                            <excuseds>
+<member>MORAHAN</member>
+                            </excuseds>
+                            <nays>
+<member>RANZENHOFER</member>
+                            </nays>
+                        </votes>
+                    </bill>
+                </calendarEntries>
+                <calendarEntries no="21" id="cal-active-00006-2009-supp--seq--21">
+                    <bill year="2009" id="S2660B">
+                        <actClause>AN ACT to amend the criminal procedure law, in relation to authorizing defendants to make electronic appearances in pending criminal actions </actClause>
+                        <currentCommittee>CODES</currentCommittee>
+                        <lawSection>Criminal Procedure Law</lawSection>
+                        <sameAs>A511B</sameAs>
+                        <sponsor position="" fullname="VOLKER">
+                            <id>VOLKER-</id>
+                        </sponsor>
+                        <summary>
+An act to amend the criminal procedure law, in relation to authorizing defendants to make electron
+ic appearances in pending criminal actions
+</summary>
+                        <title>Authorizes defendants to make electronic appearances in pending criminal actions</title>
+                        <votes voteType="1" voteDate="2010-02-01T00:00:00-05:00" id="1264982400000S2660B-61-0">
+                            <abstains/>
+                            <ayes>
+<member>ADAMS</member>
+<member>ADDABBO</member>
+<member>ALESI</member>
+<member>AUBERTINE</member>
+<member>BONACIC</member>
+<member>BRESLIN</member>
+<member>DEFRANCISCO</member>
+<member>DIAZ</member>
+<member>DILAN</member>
+<member>DUANE</member>
+<member>ESPADA</member>
+<member>FARLEY</member>
+<member>FLANAGAN</member>
+<member>FOLEY</member>
+<member>FUSCHILLO</member>
+<member>GOLDEN</member>
+<member>GRIFFO</member>
+<member>HANNON</member>
+<member>HASSELL-THOMPSON</member>
+<member>HUNTLEY</member>
+<member>JOHNSON C</member>
+<member>JOHNSON O</member>
+<member>KLEIN</member>
+<member>KRUEGER</member>
+<member>KRUGER</member>
+<member>LANZA</member>
+<member>LARKIN</member>
+<member>LAVALLE</member>
+<member>LEIBELL</member>
+<member>LIBOUS</member>
+<member>LITTLE</member>
+<member>MARCELLINO</member>
+<member>MAZIARZ</member>
+<member>MCDONALD</member>
+<member>MONSERRATE</member>
+<member>MONTGOMERY</member>
+<member>NOZZOLIO</member>
+<member>ONORATO</member>
+<member>OPPENHEIMER</member>
+<member>PADAVAN</member>
+<member>PARKER</member>
+<member>PERKINS</member>
+<member>RANZENHOFER</member>
+<member>ROBACH</member>
+<member>SALAND</member>
+<member>SAMPSON</member>
+<member>SAVINO</member>
+<member>SCHNEIDERMAN</member>
+<member>SERRANO</member>
+<member>SEWARD</member>
+<member>SKELOS</member>
+<member>SMITH</member>
+<member>SQUADRON</member>
+<member>STACHOWSKI</member>
+<member>STAVISKY</member>
+<member>STEWART-COUSINS</member>
+<member>THOMPSON</member>
+<member>VALESKY</member>
+<member>VOLKER</member>
+<member>WINNER</member>
+<member>YOUNG</member>
+                            </ayes>
+                            <excuseds>
+<member>MORAHAN</member>
+                            </excuseds>
+                            <nays/>
+                        </votes>
+                    </bill>
+                </calendarEntries>
+                <calendarEntries no="22" id="cal-active-00006-2009-supp--seq--22">
+                    <bill year="2009" id="S3377A">
+                        <actClause>AN ACT to amend the general business law and the social services law, in relation to irrevocable trust accounts for funeral and burial expenses </actClause>
+                        <currentCommittee>CONSUMER PROTECTION</currentCommittee>
+                        <lawSection>General Business Law</lawSection>
+                        <sameAs>A6926A</sameAs>
+                        <sponsor position="" fullname="KLEIN">
+                            <id>KLEIN-</id>
+                        </sponsor>
+                        <summary>
+An act to amend the general business law and the social services law, in relation to irrevocable tru
+st accounts for funeral and burial expenses
+</summary>
+                        <title>Authorizes the creation of irrevocable trust accounts for funeral and burial expenses</title>
+                        <votes voteType="1" voteDate="2010-02-01T00:00:00-05:00" id="1264982400000S3377A-61-0">
+                            <abstains/>
+                            <ayes>
+<member>ADAMS</member>
+<member>ADDABBO</member>
+<member>ALESI</member>
+<member>AUBERTINE</member>
+<member>BONACIC</member>
+<member>BRESLIN</member>
+<member>DEFRANCISCO</member>
+<member>DIAZ</member>
+<member>DILAN</member>
+<member>DUANE</member>
+<member>ESPADA</member>
+<member>FARLEY</member>
+<member>FLANAGAN</member>
+<member>FOLEY</member>
+<member>FUSCHILLO</member>
+<member>GOLDEN</member>
+<member>GRIFFO</member>
+<member>HANNON</member>
+<member>HASSELL-THOMPSON</member>
+<member>HUNTLEY</member>
+<member>JOHNSON C</member>
+<member>JOHNSON O</member>
+<member>KLEIN</member>
+<member>KRUEGER</member>
+<member>KRUGER</member>
+<member>LANZA</member>
+<member>LARKIN</member>
+<member>LAVALLE</member>
+<member>LEIBELL</member>
+<member>LIBOUS</member>
+<member>LITTLE</member>
+<member>MARCELLINO</member>
+<member>MAZIARZ</member>
+<member>MCDONALD</member>
+<member>MONSERRATE</member>
+<member>MONTGOMERY</member>
+<member>NOZZOLIO</member>
+<member>ONORATO</member>
+<member>OPPENHEIMER</member>
+<member>PADAVAN</member>
+<member>PARKER</member>
+<member>PERKINS</member>
+<member>RANZENHOFER</member>
+<member>ROBACH</member>
+<member>SALAND</member>
+<member>SAMPSON</member>
+<member>SAVINO</member>
+<member>SCHNEIDERMAN</member>
+<member>SERRANO</member>
+<member>SEWARD</member>
+<member>SKELOS</member>
+<member>SMITH</member>
+<member>SQUADRON</member>
+<member>STACHOWSKI</member>
+<member>STAVISKY</member>
+<member>STEWART-COUSINS</member>
+<member>THOMPSON</member>
+<member>VALESKY</member>
+<member>VOLKER</member>
+<member>WINNER</member>
+<member>YOUNG</member>
+                            </ayes>
+                            <excuseds>
+<member>MORAHAN</member>
+                            </excuseds>
+                            <nays/>
+                        </votes>
+                    </bill>
+                </calendarEntries>
+                <calendarEntries no="25" id="cal-active-00006-2009-supp--seq--25">
+                    <bill year="2009" id="S6334">
+                        <actClause>AN ACT to amend the public officers law, in relation to certain activities by members of a board of a community college </actClause>
+                        <currentCommittee>FINANCE</currentCommittee>
+                        <lawSection>Public Officers Law</lawSection>
+                        <sponsor position="" fullname="AUBERTINE">
+                            <id>AUBERTINE-</id>
+                        </sponsor>
+                        <summary>Relates to certain activities by members of a board of a community college. </summary>
+                        <title>Relates to certain activities by members of a board of a community college</title>
+                        <votes voteType="2" voteDate="2010-01-20T10:00:00-05:00" id="1263981600000S6334--1--1">
+                            <ayes>
+<member>KRUGER</member>
+<member>KRUEGER</member>
+<member>STACHOWSKI</member>
+<member>OPPENHEIMER</member>
+<member>MONTGOMERY</member>
+<member>DUANE</member>
+<member>PARKER</member>
+<member>STAVISKY</member>
+<member>DILAN</member>
+<member>SAMPSON</member>
+<member>STEWART-COUSINS</member>
+<member>THOMPSON</member>
+<member>ADAMS</member>
+<member>BRESLIN</member>
+<member>DIAZ</member>
+<member>ESPADA</member>
+<member>KLEIN</member>
+<member>PERKINS</member>
+<member>VALESKY</member>
+<member>DEFRANCISCO</member>
+<member>JOHNSON O</member>
+<member>VOLKER</member>
+<member>PADAVAN</member>
+<member>LAVALLE</member>
+<member>SEWARD</member>
+<member>SALAND</member>
+<member>FARLEY</member>
+<member>HANNON</member>
+<member>LARKIN</member>
+<member>NOZZOLIO</member>
+<member>LEIBELL</member>
+<member>MAZIARZ</member>
+<member>MARCELLINO</member>
+                            </ayes>
+                        </votes>
+                    </bill>
+                </calendarEntries>
+                <calendarEntries no="28" id="cal-active-00006-2009-supp--seq--28">
+                    <bill year="2009" id="S1145A">
+                        <currentCommittee>ENVIRONMENTAL CONSERVATION</currentCommittee>
+                        <lawSection>Environmental Conservation Law</lawSection>
+                        <sameAs>A8642</sameAs>
+                        <sponsor position="" fullname="PERKINS">
+                            <id>PERKINS-</id>
+                        </sponsor>
+                        <title>Requires a reduction in sulfur emissions for all heating oil used in non-attainment areas</title>
+                        <votes voteType="2" voteDate="2009-07-16T00:00:00-04:00" id="1247702400000S1145A--1--1">
+                            <ayes>
+<member>SMITH</member>
+<member>ESPADA</member>
+<member>STACHOWSKI</member>
+<member>MONTGOMERY</member>
+<member>DUANE</member>
+<member>HASSELL-THOMPSON</member>
+<member>KRUEGER</member>
+<member>PARKER</member>
+<member>SERRANO</member>
+<member>STEWART-COUSINS</member>
+<member>DILAN</member>
+<member>KLEIN</member>
+<member>VALESKY</member>
+<member>MONSERRATE</member>
+<member>PADAVAN</member>
+<member>VOLKER</member>
+<member>FARLEY</member>
+<member>LAVALLE</member>
+<member>LARKIN</member>
+                            </ayes>
+                            <excuseds>
+<member>JOHNSON O</member>
+                            </excuseds>
+                        </votes>
+                    </bill>
+                </calendarEntries>
+                <calendarEntries no="29" id="cal-active-00006-2009-supp--seq--29">
+                    <bill year="2009" id="S1635">
+                        <coSponsors position="" fullname="ADAMS">
+                            <id>ADAMS-</id>
+                        </coSponsors>
+                        <coSponsors position="" fullname="DIAZ">
+                            <id>DIAZ-</id>
+                        </coSponsors>
+                        <coSponsors position="" fullname="KRUEGER">
+                            <id>KRUEGER-</id>
+                        </coSponsors>
+                        <coSponsors position="" fullname="MONSERRATE">
+                            <id>MONSERRATE-</id>
+                        </coSponsors>
+                        <coSponsors position="" fullname="ONORATO">
+                            <id>ONORATO-</id>
+                        </coSponsors>
+                        <coSponsors position="" fullname="PARKER">
+                            <id>PARKER-</id>
+                        </coSponsors>
+                        <coSponsors position="" fullname="PERKINS">
+                            <id>PERKINS-</id>
+                        </coSponsors>
+                        <coSponsors position="" fullname="SAMPSON">
+                            <id>SAMPSON-</id>
+                        </coSponsors>
+                        <coSponsors position="" fullname="SERRANO">
+                            <id>SERRANO-</id>
+                        </coSponsors>
+                        <coSponsors position="" fullname="STAVISKY">
+                            <id>STAVISKY-</id>
+                        </coSponsors>
+                        <coSponsors position="" fullname="STEWART-COUSINS">
+                            <id>STEWART-COUSINS-</id>
+                        </coSponsors>
+                        <coSponsors position="" fullname="BRESLIN">
+                            <id>BRESLIN-</id>
+                        </coSponsors>
+                        <coSponsors position="" fullname="HASSELL-THOMPSON">
+                            <id>HASSELL-THOMPSON-</id>
+                        </coSponsors>
+                        <coSponsors position="" fullname="OPPENHEIMER">
+                            <id>OPPENHEIMER-</id>
+                        </coSponsors>
+                        <coSponsors position="" fullname="SCHNEIDERMAN">
+                            <id>SCHNEIDERMAN-</id>
+                        </coSponsors>
+                        <currentCommittee>ENVIRONMENTAL CONSERVATION</currentCommittee>
+                        <lawSection>Environmental Conservation Law</lawSection>
+                        <sameAs>A9480, A3423, </sameAs>
+                        <sponsor position="" fullname="THOMPSON">
+                            <id>THOMPSON-</id>
+                        </sponsor>
+                        <summary>Prevents individuals from being denied standing in private actions alleging violations of the environmental quality review provisions of the environmental conservation law solely on the basis that the injury alleged by such individual does not differ in kind or degree from the injury that would be suffered by the public at large. </summary>
+                        <title>Relates to standing to bring an action for a violation of the provisions of the state environmental quality review act</title>
+                        <votes voteType="2" voteDate="2010-01-20T12:00:00-05:00" id="1263988800000S1635--1--1">
+                            <ayes>
+<member>THOMPSON</member>
+<member>OPPENHEIMER</member>
+<member>SCHNEIDERMAN</member>
+<member>PARKER</member>
+<member>SERRANO</member>
+<member>PERKINS</member>
+<member>STEWART-COUSINS</member>
+<member>FOLEY</member>
+<member>PADAVAN</member>
+                            </ayes>
+                            <nays>
+<member>MARCELLINO</member>
+<member>LEIBELL</member>
+<member>JOHNSON O</member>
+<member>LITTLE</member>
+<member>YOUNG</member>
+                            </nays>
+                        </votes>
+                    </bill>
+                </calendarEntries>
+                <calendarEntries no="30" id="cal-active-00006-2009-supp--seq--30">
+                    <bill year="2009" id="S4407">
+                        <coSponsors position="" fullname="HASSELL-THOMPSON">
+                            <id>HASSELL-THOMPSON-</id>
+                        </coSponsors>
+                        <coSponsors position="" fullname="MONTGOMERY">
+                            <id>MONTGOMERY-</id>
+                        </coSponsors>
+                        <coSponsors position="" fullname="ONORATO">
+                            <id>ONORATO-</id>
+                        </coSponsors>
+                        <coSponsors position="" fullname="OPPENHEIMER">
+                            <id>OPPENHEIMER-</id>
+                        </coSponsors>
+                        <coSponsors position="" fullname="THOMPSON">
+                            <id>THOMPSON-</id>
+                        </coSponsors>
+                        <coSponsors position="" fullname="SQUADRON">
+                            <id>SQUADRON-</id>
+                        </coSponsors>
+                        <currentCommittee>ENVIRONMENTAL CONSERVATION</currentCommittee>
+                        <lawSection>Environmental Conservation Law</lawSection>
+                        <sponsor position="" fullname="SCHNEIDERMAN">
+                            <id>SCHNEIDERMAN-</id>
+                        </sponsor>
+                        <summary>Declares a policy of equal treatment of people of all races, cultures, religions, incomes, education levels and sexual preference in the development and enforcement of environmental laws, regulations and policies. </summary>
+                        <title>Declares a policy of equal treatment in development and enforcement of environmental laws, regulations and policies</title>
+                        <votes voteType="1" voteDate="2010-02-22T00:00:00-05:00" id="1266796800000S4407-44-15">
+                            <abstains/>
+                            <ayes>
+<member>ADAMS</member>
+<member>ADDABBO</member>
+<member>ALESI</member>
+<member>AUBERTINE</member>
+<member>BRESLIN</member>
+<member>DILAN</member>
+<member>DUANE</member>
+<member>ESPADA</member>
+<member>FARLEY</member>
+<member>FOLEY</member>
+<member>FUSCHILLO</member>
+<member>GOLDEN</member>
+<member>GRIFFO</member>
+<member>HANNON</member>
+<member>HASSELL-THOMPSON</member>
+<member>HUNTLEY</member>
+<member>JOHNSON C</member>
+<member>KLEIN</member>
+<member>KRUEGER</member>
+<member>KRUGER</member>
+<member>LAVALLE</member>
+<member>LIBOUS</member>
+<member>MARCELLINO</member>
+<member>MAZIARZ</member>
+<member>MCDONALD</member>
+<member>MONTGOMERY</member>
+<member>ONORATO</member>
+<member>OPPENHEIMER</member>
+<member>PADAVAN</member>
+<member>PARKER</member>
+<member>PERKINS</member>
+<member>ROBACH</member>
+<member>SAMPSON</member>
+<member>SAVINO</member>
+<member>SCHNEIDERMAN</member>
+<member>SERRANO</member>
+<member>SEWARD</member>
+<member>SMITH</member>
+<member>SQUADRON</member>
+<member>STACHOWSKI</member>
+<member>STAVISKY</member>
+<member>STEWART-COUSINS</member>
+<member>THOMPSON</member>
+<member>VALESKY</member>
+                            </ayes>
+                            <excuseds>
+<member>MORAHAN</member>
+<member>SKELOS</member>
+                            </excuseds>
+                            <nays>
+<member>BONACIC</member>
+<member>DEFRANCISCO</member>
+<member>DIAZ</member>
+<member>FLANAGAN</member>
+<member>JOHNSON O</member>
+<member>LANZA</member>
+<member>LARKIN</member>
+<member>LEIBELL</member>
+<member>LITTLE</member>
+<member>NOZZOLIO</member>
+<member>RANZENHOFER</member>
+<member>SALAND</member>
+<member>VOLKER</member>
+<member>WINNER</member>
+<member>YOUNG</member>
+                            </nays>
+                        </votes>
+                    </bill>
+                </calendarEntries>
+                <calendarEntries no="31" id="cal-active-00006-2009-supp--seq--31">
+                    <bill year="2009" id="S5642">
+                        <currentCommittee>ENVIRONMENTAL CONSERVATION</currentCommittee>
+                        <lawSection>Environmental Conservation Law</lawSection>
+                        <sameAs>A1976A</sameAs>
+                        <sponsor position="" fullname="THOMPSON">
+                            <id>THOMPSON-</id>
+                        </sponsor>
+                        <summary>Authorizes the electronic filing of freshwater wetlands regulatory maps. </summary>
+                        <title>Relates to the electronic filing of wetlands regulatory maps</title>
+                        <votes voteType="1" voteDate="2010-02-01T00:00:00-05:00" id="1264982400000S5642-61-0">
+                            <abstains/>
+                            <ayes>
+<member>ADAMS</member>
+<member>ADDABBO</member>
+<member>ALESI</member>
+<member>AUBERTINE</member>
+<member>BONACIC</member>
+<member>BRESLIN</member>
+<member>DEFRANCISCO</member>
+<member>DIAZ</member>
+<member>DILAN</member>
+<member>DUANE</member>
+<member>ESPADA</member>
+<member>FARLEY</member>
+<member>FLANAGAN</member>
+<member>FOLEY</member>
+<member>FUSCHILLO</member>
+<member>GOLDEN</member>
+<member>GRIFFO</member>
+<member>HANNON</member>
+<member>HASSELL-THOMPSON</member>
+<member>HUNTLEY</member>
+<member>JOHNSON C</member>
+<member>JOHNSON O</member>
+<member>KLEIN</member>
+<member>KRUEGER</member>
+<member>KRUGER</member>
+<member>LANZA</member>
+<member>LARKIN</member>
+<member>LAVALLE</member>
+<member>LEIBELL</member>
+<member>LIBOUS</member>
+<member>LITTLE</member>
+<member>MARCELLINO</member>
+<member>MAZIARZ</member>
+<member>MCDONALD</member>
+<member>MONSERRATE</member>
+<member>MONTGOMERY</member>
+<member>NOZZOLIO</member>
+<member>ONORATO</member>
+<member>OPPENHEIMER</member>
+<member>PADAVAN</member>
+<member>PARKER</member>
+<member>PERKINS</member>
+<member>RANZENHOFER</member>
+<member>ROBACH</member>
+<member>SALAND</member>
+<member>SAMPSON</member>
+<member>SAVINO</member>
+<member>SCHNEIDERMAN</member>
+<member>SERRANO</member>
+<member>SEWARD</member>
+<member>SKELOS</member>
+<member>SMITH</member>
+<member>SQUADRON</member>
+<member>STACHOWSKI</member>
+<member>STAVISKY</member>
+<member>STEWART-COUSINS</member>
+<member>THOMPSON</member>
+<member>VALESKY</member>
+<member>VOLKER</member>
+<member>WINNER</member>
+<member>YOUNG</member>
+                            </ayes>
+                            <excuseds>
+<member>MORAHAN</member>
+                            </excuseds>
+                            <nays/>
+                        </votes>
+                    </bill>
+                </calendarEntries>
+                <calendarEntries no="32" id="cal-active-00006-2009-supp--seq--32">
+                    <bill year="2009" id="S3236">
+                        <coSponsors position="" fullname="VOLKER">
+                            <id>VOLKER-</id>
+                        </coSponsors>
+                        <currentCommittee>ELECTIONS</currentCommittee>
+                        <lawSection>Election Law</lawSection>
+                        <sameAs>A1941B</sameAs>
+                        <sponsor position="" fullname="FLANAGAN">
+                            <id>FLANAGAN-</id>
+                        </sponsor>
+                        <summary>Removes the provision requiring a candidate's residence to be published prior to an election. </summary>
+                        <title>Removes the provision requiring a candidate's residence to be published prior to an election</title>
+                        <votes voteType="1" voteDate="2010-02-01T00:00:00-05:00" id="1264982400000S3236-61-0">
+                            <abstains/>
+                            <ayes>
+<member>ADAMS</member>
+<member>ADDABBO</member>
+<member>ALESI</member>
+<member>AUBERTINE</member>
+<member>BONACIC</member>
+<member>BRESLIN</member>
+<member>DEFRANCISCO</member>
+<member>DIAZ</member>
+<member>DILAN</member>
+<member>DUANE</member>
+<member>ESPADA</member>
+<member>FARLEY</member>
+<member>FLANAGAN</member>
+<member>FOLEY</member>
+<member>FUSCHILLO</member>
+<member>GOLDEN</member>
+<member>GRIFFO</member>
+<member>HANNON</member>
+<member>HASSELL-THOMPSON</member>
+<member>HUNTLEY</member>
+<member>JOHNSON C</member>
+<member>JOHNSON O</member>
+<member>KLEIN</member>
+<member>KRUEGER</member>
+<member>KRUGER</member>
+<member>LANZA</member>
+<member>LARKIN</member>
+<member>LAVALLE</member>
+<member>LEIBELL</member>
+<member>LIBOUS</member>
+<member>LITTLE</member>
+<member>MARCELLINO</member>
+<member>MAZIARZ</member>
+<member>MCDONALD</member>
+<member>MONSERRATE</member>
+<member>MONTGOMERY</member>
+<member>NOZZOLIO</member>
+<member>ONORATO</member>
+<member>OPPENHEIMER</member>
+<member>PADAVAN</member>
+<member>PARKER</member>
+<member>PERKINS</member>
+<member>RANZENHOFER</member>
+<member>ROBACH</member>
+<member>SALAND</member>
+<member>SAMPSON</member>
+<member>SAVINO</member>
+<member>SCHNEIDERMAN</member>
+<member>SERRANO</member>
+<member>SEWARD</member>
+<member>SKELOS</member>
+<member>SMITH</member>
+<member>SQUADRON</member>
+<member>STACHOWSKI</member>
+<member>STAVISKY</member>
+<member>STEWART-COUSINS</member>
+<member>THOMPSON</member>
+<member>VALESKY</member>
+<member>VOLKER</member>
+<member>WINNER</member>
+<member>YOUNG</member>
+                            </ayes>
+                            <excuseds>
+<member>MORAHAN</member>
+                            </excuseds>
+                            <nays/>
+                        </votes>
+                    </bill>
+                </calendarEntries>
+                <calendarEntries no="33" id="cal-active-00006-2009-supp--seq--33">
+                    <bill year="2009" id="S4960A">
+                        <actClause>AN ACT to amend the election law, in relation to making applications for absentee ballots </actClause>
+                        <currentCommittee>ELECTIONS</currentCommittee>
+                        <lawSection>Election Law</lawSection>
+                        <sameAs>A7347, </sameAs>
+                        <sponsor position="" fullname="KRUEGER">
+                            <id>KRUEGER-</id>
+                        </sponsor>
+                        <title>Relates to applications for absentee ballots</title>
+                    </bill>
+                </calendarEntries>
+                <no></no>
+                <notes>
+</notes>
+                <releaseDateTime>2010-01-29T17:58:03-05:00</releaseDateTime>
+            </sequence>
+        </supplemental>
+    </supplementals>
+</calendar>

@@ -1,0 +1,668 @@
+<?php
+// $Id$
+
+/**
+ *  @file
+ *  NYSS OpenLeg
+ *
+ *  This module retrieves information from OpenLeg, the open legislation 
+ *  database and web service of the New York State Senate:
+ *  http://open.nysenate.gov/legislation/
+ *
+ */
+
+include_once dirname(__FILE__) . '/openleg.inc';
+
+/**
+ *  Implement hook_menu().
+ */
+function openleg_menu() {
+  $items = array();
+  $items['admin/settings/openleg'] = array(
+    'title' => 'OpenLeg',
+    'description' => 'Specify settings to control retrieval of OpenLeg data.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('openleg_settings'),
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+  return $items;
+}
+
+/**
+ *  Implement hook_settings().
+ */
+function openleg_settings() {
+  $form['openleg_source'] = array(
+    '#type' => 'radios',
+    '#title' => t('Retrieve OpenLeg results from'),
+    '#options' => array(
+      OPENLEG_ROOT => t('Public site'), 
+      OPENLEG_STAGING => t('Staging'),
+    ),
+    '#default_value' => variable_get('openleg_source', OPENLEG_ROOT),
+  );
+  return system_settings_form($form);
+}
+
+/**
+ * Implementation of hook_theme()
+ */
+function openleg_theme() {
+  return array(
+    'openleg_bills' => array(
+      'arguments' => array('meeting' => NULL),
+    ),
+    'openleg_note' => array(
+      'arguments' => array('meeting' => NULL),
+    ),
+    'openleg_meeting' => array(
+      'arguments' => array('meeting' => NULL),
+    ),
+    'openleg_sponsor_legislation' => array(
+      'arguments' => array('sponsor' => NULL, 'page' => 1, 'numitems' => 20),
+      'template' => 'openleg-sponsor-legislation',
+    ),
+    'openleg_single_bill' => array(
+      'arguments' => array('senate_id' => NULL, 'sponsor' => NULL, 'title' => NULL, 'committee' => NULL, 'summary' => NULL),
+      'template' => 'openleg-single-bill',
+    ),
+    'openleg_link' => array(
+      'arguments' => array('display_text' => NULL, 'senator_string' => NULL, 'page' => 1, 'numitems' => 20),
+    ),
+    'openleg_links' => array(
+      'arguments' => array('senator_string' => NULL, 'current_page' => 1, 'numitems' => 20),
+    ),
+  );
+}
+
+/**
+ * Returns a list of bills discussed at a meeting.
+ *
+ * @param $meeting
+ *   The meeting as a SimpleXML object.
+ * @return
+ *   HTML text.
+ */
+function theme_openleg_bills($meeting) {
+  $bills = array();
+  foreach (openleg_meeting($meeting, 'bills') as $bill) {
+    $bills[] = '<tr><td>' . l(openleg_bill($bill, 'id'), 'http://open.nysenate.gov/legislation/bill/' . openleg_bill($bill, 'id')) . '</td>' .
+      '<td>' . openleg_bill($bill, 'sponsor') . '</td>' .
+      '<td>' . openleg_bill($bill, 'title') . "</td></tr>\n";
+  }
+  if (count($bills)) {
+    $output .= '<div class="openleg-meeting-bills"><label>' . t('Bills:') . '</label>';
+    $output .= '<table><tr><th width="70">ID</th><th width="100">Sponsor</th><th>Title</th></tr>';
+    $output .= implode('', $bills);
+    $output .= "</table></div>\n";
+  }
+  return $output;
+}
+
+/**
+ * Returns the meeting note.
+ *
+ * @param $meeting
+ *   The meeting as a SimpleXML object.
+ * @return
+ *   HTML text.
+ */
+function theme_openleg_note($meeting) {
+  $note = trim(openleg_meeting($meeting, 'note'));
+  if ($note) {
+    return '<div class="openleg-meeting-note"><label>' . t('Note: ') . '</label>' . openleg_meeting($meeting, 'note') . '</div>';
+  }
+}
+
+/**
+ * Returns an HTML representation of the meeting note and bills.
+ *
+ * @param $meeting
+ *   The meeting as a SimpleXML object.
+ * @return
+ *   HTML text.
+ */
+function theme_openleg_meeting($meeting) {
+  $output .= theme('openleg_note', $meeting);
+  $output .= theme('openleg_bills', $meeting);
+  return $output;
+}
+
+/**
+ * Retrieves a cached OpenLeg object.
+ *
+ * @param $type
+ *   The object type, i.e., meeting, vote, bill, etc.
+ * @param $id
+ *   The object's OpenLeg ID.
+ * @param $reset
+ *   A Boolean value. If TRUE, retrieve a fresh object.
+ * @return
+ *   An OpenLeg object of class OpenLegMeeting, OpenLegBill, etc.
+ */
+function openleg_get_cached($type, $id, $reset = FALSE) {
+  static $openleg_objects;
+  $path = "$type/$id";
+  if (!isset($openleg_objects[$path]) || $reset) {
+    $source = variable_get('openleg_source', OPENLEG_ROOT);
+    switch ($type) {
+      case 'meeting':
+        $object = new OpenLegMeeting($id, $source);
+        break;
+      case 'bill':
+        $object = new OpenLegBill($id, $source);
+        break;
+      case 'calendar':
+        $object = new OpenLegCalendar($id, $source);
+        break;
+      case 'transcript':
+        $object = new OpenLegTranscript($id, $source);
+        break;
+      case 'vote':
+        $object = new OpenLegVote($id, $source);
+        break;
+      case 'action':
+        $object = new OpenLegAction($id, $source);
+        break;
+    }
+    if ($object) {
+      if (!$reset && ($cache = cache_get($path, 'cache_openleg')) && !empty($cache->data)) {
+        $object->xml($cache->data);
+      }
+      else {
+        $object->get();
+//drupal_set_message("got meeting for $path from OpenLeg");
+        cache_set($path, $object->xml, 'cache_openleg', time() + (60 * 60));
+      }
+      $openleg_objects[$path] = $object;
+    }
+  }
+  return $openleg_objects[$path];
+}
+
+/**
+ * Makes a 5-hour adjustment to the date string.
+ *
+ * OpenLeg records dates in Eastern Standard Time (EST). The five-hour adjustment
+ * is necessary because NYSenate.gov uses Drupal's Date module, which stores dates
+ * internally in Greenwich Mean Time
+ *
+ * @return
+ *   a UTC-formatted date
+ */
+function _openleg_adjust_date_string_offset($datestring) {
+  if (substr($datestring, -1) == 'Z') { // handle time offset bug in OpenLeg
+    $meeting_date = date_make_date($datestring . ' + 5 hours');
+  }
+  else {
+    $meeting_date = date_make_date($datestring);
+  }
+  $internal_storage_timezone = new DateTimeZone('GMT');
+  $meeting_date->setTimezone($internal_storage_timezone);
+  $utc_format = "Y-m-d\TH:i:s";
+  return date_format_date($meeting_date, 'custom', $utc_format);
+}
+
+/**
+ * Creates a committee meeting at NYSenate.gov to match a OpenLeg meeting,
+ * if no matching meeting already exists.
+ *
+ * @param $meeting
+ *   an OpenLegMeeting object
+ * @return
+ *   a string: either 'exists', 'created' or 'failed'
+ */
+function openleg_create_matching_meeting($meeting=NULL) {
+  if ($meeting) {
+    $time = $meeting->meetingDateTime();
+    $location = $meeting->location();
+    $committee_name = $meeting->committeeName();
+    $committee = nyss_committee_node_from_title(nyss_committee_path_name($committee_name));
+    $purpose = theme('openleg_meeting', $meeting->data);
+  }
+  module_load_include('inc', 'node', 'node.pages');
+//    global $user;
+  $node = new StdClass();
+  $node->type = 'event';
+  node_object_prepare($node);  // not sure if this is needed or not
+  $node->uid = 1088; // $user->uid;
+  $node->status = 1;  // change to 1 to publish
+  $node->comment = 0;  // allow comments?
+  $node->promote = 0;      // promote to front page?
+  
+  $node->title = 'Some title';
+  $node->body = 'xxx';
+  $node->teaser = $node->body;
+  $node->format = 2;
+  $node->field_date = array(
+    array(
+      'value' => '2010-02-24T14:30:00',
+      'value2' => '2010-02-24T15:30:00',
+      'timezone' => 'America/New York',
+      'timezone_db' => 'UTC',
+      'date_type' => 'date',
+    )
+  );
+
+  $location = array(
+    'name' => 'Legislative Office Building, Room 804',
+    'street' => 'Room 804 LOB',
+    'additional' => 'Capitol Hill',
+    'city' => 'Albany',
+    'province' => 'NY',
+    'postal_code' => '',
+    'country' => 'us',
+    'latitude' => 42.652579,
+    'longitude' => -73.756232,
+//      [source] => 3
+//      [is_primary] => 0
+    'province_name' => 'New York',
+    'country_name' => 'United States',
+//      [fax] => 
+//      [phone] => 
+  );
+  $node->field_location = array(
+    $location
+  );
+  $node->field_authored_by_senator = array(
+    array(
+      'value' => 1,
+    )
+  );
+  $node->field_senator = array(
+    array(
+      'nid' => 237,
+    )
+  );
+  $node->field_committee = array(
+    array(
+      'nid' => 266,
+    )
+  );
+  $node->field_live_streaming = array(
+    array(
+      'value' => 1,
+    )
+  );
+  $node->field_openleg_id = array(
+    array(
+      'value' => 'meeting-Mental Health and Developmental Disabilities-6-2009',
+    )
+  );
+  $node->field_public_hearing = array(
+    array(
+      'value' => 3,
+    )
+  );
+  $node->field_search_type = array(
+    array(
+      'value' => 3,
+    )
+  );
+  $node->field_creation = array(
+    array(
+      'value' => 1266987600,
+      'timezone' => 'America/New_York',
+      'timezone_db' => 'America/New_York',
+      'date_type' => 'datestamp'
+    )
+  );
+  $term1 = new StdClass();
+  $term1->tid = 136;
+  $term1->vid = 1;
+  $term1->name = 'Disability';
+  $term1->description = '';
+  $term1->weight = 0;
+
+  $term2 = new StdClass();
+  $term2->tid = 43;
+  $term2->vid = 1;
+  $term2->name = 'Mental Health';
+  $term2->description = '';
+  $term2->weight = 0;
+  $node->taxonomy = array(
+    136 => $term1,
+    43 => $term2,
+  );
+  
+  
+  node_save($node);
+  // if there's a nid now, then we saved it
+  if ($node->nid) {
+      echo "Node saved with id of: " . $node->nid;
+  } else {
+      echo "Node failed to save.";
+      var_dump($node);
+      unset($node);
+      exit();
+  }
+}
+
+
+/**
+ * Tries to find an event in NYSenate.gov that matches a committee name, date and OpenLeg key.
+ *
+ * NOTE: This function is under development and may change.
+ *
+ * @param $committee_name
+ *   The committee name.
+ * @param $date_string
+ *   A UTC-formatted date.
+ * @param $openleg_key
+ *   The OpenLeg ID for the event, which functions as a unique identifier.
+ * @return
+ *   a Drupal node object for the event.
+ */
+function openleg_find_matching_event($committee_name, $date_string, $openleg_key=NULL) {
+  $match = openleg_find_event_by_openleg_id($openleg_key);
+  if (!$match) {
+    $match = openleg_find_event_by_name_and_date($committee_name, $date_string);
+  }
+  if ($match) {
+    return node_load($match);
+  }
+  return NULL;
+}
+
+/**
+ * Tries to find a meeting in OpenLeg that matches an NYSenate.gov committee meeting.
+ *
+ * NOTE: This function is under development and may change.
+ *
+ * @param $meeting
+ *   The meeting node
+ * @return
+ *   a meeting ID string
+ */
+function openleg_find_matching_meeting_id($meeting, &$count=0) {
+  $committee_nid = $meeting->field_committee[0]['nid']; // could be empty
+  if (!$committee_nid) {
+    return NULL;
+  }
+  $committee = node_load($committee_nid);
+  $committee_name = $committee->title;
+  list($year, $month, $day) = explode('-', substr($meeting->field_date[0]['value'], 0, 10));
+  $date = "$month/$day/$year";
+  $source = variable_get('openleg_source', OPENLEG_ROOT);
+  $search = openleg_lucene_search(
+    array(
+      'type' => 'meeting',
+      'startdate' => $date,
+      'committee' => $committee_name,
+    ),
+    $source
+  );
+  $search_xml = simplexml_load_string($search);
+  $count = (string)$search_xml->attributes()->total;
+  if ($count > 1) {
+    drupal_set_message("More than one meeting for " . l($meeting->title, "node/".$meeting->nid));
+    drupal_set_message("Event field_date is " . $meeting->field_date[0]['value']);
+    foreach ($search_xml->result as $result) {
+      drupal_set_message('<pre>' . print_r($result, TRUE) . '</pre>');
+      $last = $result;
+    }
+    return openleg_attribute($last, 'id');
+//    list($hour, $minute, $second) = explode('-', substr($meeting->field_date[0]['value'], 11, 8));
+  }
+  if ($count) {
+//    drupal_set_message("One meeting for " . l("node/".$meeting->nid, $meeting->title));
+    return openleg_attribute($search_xml->result[0], 'id');
+  }
+}
+
+/**
+ * Tries to find an event in NYSenate.gov that matches a committee name and date.
+ *
+ * NOTE: This function is under development and may change.
+ *
+ * @param $committee_name
+ *   The committee name.
+ * @param $date_string
+ *   A UTC-formatted date.
+ * @return
+ *   a node ID (nid).
+ */
+function openleg_find_event_by_name_and_date($committee_name, $date_string) {
+  $sql = 'SELECT DISTINCT (n.nid) AS nid, d.field_date_value FROM {node} n
+    LEFT JOIN {content_field_committee} cfc ON n.vid = cfc.vid
+    LEFT JOIN {node} node_cfc ON cfc.field_committee_nid = node_cfc.nid
+    LEFT JOIN {content_field_date} d ON n.vid = d.vid
+    INNER JOIN {content_type_event} e ON n.vid = e.vid
+    WHERE n.type = "event" AND e.field_public_hearing_value = 3 AND node_cfc.title = "%s" AND d.field_date_value = "%s"';
+  $result = db_result(db_query($sql, $committee_name, _openleg_adjust_date_string_offset($date_string)));
+  if ($result) {
+    return $result;
+  }
+  $date_only = substr(_openleg_adjust_date_string_offset($date_string), 0, 11) . '%';
+  $sql = 'SELECT DISTINCT (n.nid) AS nid, d.field_date_value FROM {node} n
+    LEFT JOIN {content_field_committee} cfc ON n.vid = cfc.vid
+    LEFT JOIN {node} node_cfc ON cfc.field_committee_nid = node_cfc.nid
+    LEFT JOIN {content_field_date} d ON n.vid = d.vid
+    INNER JOIN {content_type_event} e ON n.vid = e.vid
+    WHERE n.type = "event" AND e.field_public_hearing_value = 3 AND node_cfc.title = "%s" AND d.field_date_value LIKE "%s"';
+  return db_result(db_query($sql, $committee_name, $date_only));
+}
+
+function openleg_find_event_by_name_and_date_no_time($committee_name, $date_string) {
+  $date_only = substr(_openleg_adjust_date_string_offset($date_string), 0, 11) . '%';
+  $sql = 'SELECT DISTINCT (n.nid) AS nid, d.field_date_value FROM {node} n
+    LEFT JOIN {content_field_committee} cfc ON n.vid = cfc.vid
+    LEFT JOIN {node} node_cfc ON cfc.field_committee_nid = node_cfc.nid
+    LEFT JOIN {content_field_date} d ON n.vid = d.vid
+    INNER JOIN {content_type_event} e ON n.vid = e.vid
+    WHERE n.type = "event" AND e.field_public_hearing_value = 3 AND node_cfc.title = "%s" AND d.field_date_value LIKE "%s"';
+  return db_result(db_query($sql, $committee_name, $date_only));
+}
+
+/**
+ * Tries to find an event in NYSenate.gov that matches an OpenLeg ID.
+ *
+ * NOTE: This function is under development and may change.
+ *
+ * @param $openleg_key
+ *   The OpenLeg ID for the event, which functions as a unique identifier.
+ * @return
+ *   a node ID (nid).
+ */
+function openleg_find_event_by_openleg_id($openleg_key) {
+  $sql = 'SELECT DISTINCT(n.nid) AS nid FROM {node} n
+    LEFT JOIN {content_type_event} e ON n.vid = e.vid
+    WHERE n.type = "event" AND e.field_openleg_id_value = "%s"';
+  return db_result(db_query($sql, $openleg_key));
+}
+
+/**
+ * Returns HTML for a single OpenLeg committee meeting.
+ *
+ * NOTE: This function is under development and may change.
+ *
+ * @param $id
+ *   The OpenLeg ID for the event, which functions as a unique identifier.
+ * @return
+ *   HTML text.
+ */
+function openleg_display_meeting($id) {
+  return theme('openleg_meeting', openleg_retrieve('meeting/' . $id));
+}
+
+/**
+ * Returns a paged listing of legislation sponsored by a single senator.
+ *
+ * @param $sponsor
+ *   The name of the sponsor, e.g., "DIAZ".
+ * @param $page
+ *   An integer specifying which page of search results should be returned.
+ * @param $numitems
+ *   The number of items to be listed per page.
+ * @return
+ *   The list of legislation as a SimpleXML object.
+ */
+function openleg_sponsor_legislation($sponsor, $page=1, $numitems=20) {
+  return openleg_retrieve("sponsor/$sponsor/$page/$numitems", variable_get('openleg_source', OPENLEG_ROOT));
+}
+
+/**
+ * Returns a link to a web page showing a senator's legislation.
+ *
+ * NOTE: This is not actually being used on the live site and is deprecated.
+ *
+ * @param $display text
+ *   The display text for the link
+ * @param $senator_string
+ *   The text string that specifies that senator in the URL, e.g., "eric-adams".
+ * @param $page
+ *   An integer specifying which page of search results should be returned.
+ * @param $numitems
+ *   The number of items to be listed per page.
+ * @return
+ *   The HTML for the link.
+ */
+function theme_openleg_link($display_text, $senator_string, $page=1, $numitems=20) {
+  return l($display_text, "senator/$senator_string/legislation/$page/$numitems");
+}
+
+/**
+ * Returns a pager for navigation to other pages of search results.
+ *
+ * NOTE: This is not actually being used on the live site and is deprecated.
+ *
+ * @param $senator_string text
+ *   The display text for the link
+ * @param $current_page
+ *   The current page of search results being displayed
+ * @param $numitems
+ *   The number of items to be listed per page.
+ * @return
+ *   The HTML for the pager.
+ */
+function theme_openleg_links($senator_string, $current_page=1, $numitems=20) {
+  $links = array();
+  $next_string = t('next ›');
+  if ($current_page == 1) {
+    $next_string = t('more »');
+  }
+  else {
+    $links[] = theme('openleg_link', t('« first'), $senator_string, 1, $numitems);
+  }
+  if ($current_page > 2) {
+    $links[] = theme('openleg_link', t('‹ previous'), $senator_string, $current_page - 1, $numitems);
+  }
+  $links[] = theme('openleg_link', $next_string, $senator_string, $current_page + 1, $numitems);
+  $output = '<div class="item-list"><ul class="pager"><li class="pager-first first">';
+  $output .= implode('</li><li class="pager-item">', $links);
+  $output .= '</li></ul></div>';
+  return $output;
+}
+
+/**
+ * Returns a list of all committee meetings in OpenLeg, and whether a matching event already exists
+ * at NYSenate.gov.
+ *
+ * NOTE: This function is for development/testing purposes and not for deployment on the live site.
+ *
+ * @return
+ *   HTML text.
+ */
+function openleg_meetings_list() {
+  $source = variable_get('openleg_source', OPENLEG_ROOT);
+  $search = openleg_lucene_search(array('type' => 'meeting', 'pageSize' => '100'), $source);
+  $search = simplexml_load_string($search);
+  $count = (string)$search->attributes()->total;
+  $output = "<p>$count results</p>";
+  $i = 1;
+  foreach ($search->result as $result) {
+    $output .= "<p>$i " . openleg_attribute($result, 'id') . "</p>\n";
+    $type = openleg_attribute($result, 'type');
+    $id = openleg_attribute($result, 'id');
+    $meeting = openleg_get_cached($type, $id);
+    $date_time = $meeting->meetingDateTime();
+    $committee_name = $meeting->committeeName();
+    $output .= "<p>$date_time, $committee_name, $id</p>";
+    $matching_node = openleg_find_matching_event($committee_name, $date_time, $id);
+    if ($matching_node) {
+      $output .= '<p>MATCHES: ' . l($matching_node->title, 'node/'.$matching_node->nid) . '</p>';
+    }
+    else {
+      $output .= '<p>NO MATCH</p>';
+    }
+    $i++;
+  }
+  return $output;
+}
+
+/**
+ * A test listing of 10 events .
+ *
+ * This is just a messy test function.
+ *
+ * @return
+ *   Some messy HTML.
+ */
+function openleg_events_list() {
+  $result = db_query("SELECT nid FROM {node} WHERE type='event' ORDER BY created DESC LIMIT 10");
+  while ($nid = db_result($result)) {
+    $event = node_load($nid);
+
+    $from_date = date_make_date($event->field_date[0]['value'], 'UTC');
+    date_timezone_set($from_date, timezone_open(date_get_timezone('site')));// Fix timezone
+    $to_date = date_make_date($event->field_date[0]['value2'], 'UTC');
+    date_timezone_set($to_date, timezone_open(date_get_timezone('site')));// Fix timezone
+    $utc_format = "Y-m-d\TH:i:s";
+    $from_date_string = date_format_date($from_date, 'custom', $utc_format);
+    $to_time_string = date_format_date($to_date, 'custom', $utc_format);
+
+    $output .= '<li>' . $from_date_string . ' / ' . $to_time_string . ': ' . l($event->title, 'node/'.$event->nid) . '</li>';
+
+    $output .= "<li>$sql: $from_date_string</li>";
+    $tried = openleg_find_matching_event('Aging', $from_date_string);
+    if ($tried) {
+      $output .= '<li>' . l('FOUND IT', 'node/'.$tried->nid) . $tried->field_date_value . '</li>';
+    }
+  }
+  return "<ul>$output</ul>";
+}
+
+/**
+ * Some code to retrieve results for testing purposes during development.
+ * This function will be deleted eventually.
+ */
+function openleg_junk() {
+  drupal_set_message('<pre>' . openleg_meeting_value($results->meetings[0], 'location') . '</pre>' . 'xxx');
+  drupal_set_message('<pre>' . openleg_meeting_value($results->meetings[0], 'committee_name') . '</pre>' . 'xxx');
+  drupal_set_message('<pre>' . openleg_meeting_value($results->meetings[0], 'committee_chair') . '</pre>' . 'xxx');
+  drupal_set_message('<pre>' . openleg_meeting_value($results->meetings[0], 'notes') . '</pre>' . 'xxx');
+  drupal_set_message('<pre>' . openleg_meeting_value($results->meetings[0], 'id') . '</pre>' . 'xxx');
+  return;
+  
+  drupal_set_message('<pre>' . print_r($results->meetings[0]->attributes(), TRUE) . '</pre>' . 'xxx');
+//  drupal_set_message('<pre>' . print_r($results->meetings[0]->bills, TRUE) . '</pre>' . 'xxx');
+  drupal_set_message('<pre>' . print_r((string)$results->meetings[0]->notes, TRUE) . '</pre>' . 'xxx');
+  foreach ($results->meetings[0]->bills[0] as $bill) {
+    drupal_set_message('<pre>' . print_r($bill->attributes(), TRUE) . '</pre>' . 'xxx');
+  }
+  foreach ($results->meetings[0]->notes[0] as $note) {
+    drupal_set_message('<pre>' . print_r($note->attributes(), TRUE) . '</pre>' . 'zzz');
+  }
+  
+  foreach ($results->meetings as $meeting) {
+    drupal_set_message('meetingDateTime: ' . print_r((string)$meeting->attributes()->meetingDateTime, TRUE) );
+  }
+  return;
+
+  drupal_set_message('<pre>' . print_r($results->meetings[0]->bills, TRUE) . '</pre>' . 'xxx');
+  drupal_set_message('<pre>' . print_r($results->meetings[0]->notes, TRUE) . '</pre>' . 'xxx');
+  drupal_set_message('<pre>' . print_r($results->meetings[0], TRUE) . '</pre>' . 'xxx');
+  drupal_set_message(print_r($results->meetings, TRUE) . 'xxx');
+  drupal_set_message(print_r($results, TRUE) . 'x' );
+  drupal_set_message(count($results->meetings) . 'xxx');
+  drupal_set_message(print_r($results->meetings[0]->attributes(), TRUE) );
+  drupal_set_message(print_r($results->meetings[0]->attributes()->meetingDateTime, TRUE) );
+  drupal_set_message('meetingDateTime: ' . print_r((string)$results->meetings[0]->attributes()->meetingDateTime, TRUE) );
+  drupal_set_message('meetday: ' . print_r((string)$results->meetings[0]->attributes()->meetday, TRUE) );
+  drupal_set_message('location: ' . print_r((string)$results->meetings[0]->attributes()->location, TRUE) );
+  drupal_set_message('id: ' . print_r((string)$results->meetings[0]->attributes()->id, TRUE) );
+  drupal_set_message('committeeName: ' . print_r((string)$results->meetings[0]->attributes()->committeeName, TRUE) );
+  drupal_set_message('committeeChair: ' . print_r((string)$results->meetings[0]->attributes()->committeeChair, TRUE) );
+}
+
